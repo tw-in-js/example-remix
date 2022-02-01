@@ -4,19 +4,23 @@ specifiers:
   '@remix-run/dev': ^1.1.3
   '@remix-run/react': ^1.1.3
   '@remix-run/serve': ^1.1.3
+  '@twind/tailwind': ^1.0.0-next.32
   '@types/react': ^17.0.38
   '@types/react-dom': ^17.0.11
   react: ^17.0.2
   react-dom: ^17.0.2
   remix: ^1.1.3
+  twind: ^1.0.0-next.32
   typescript: ^4.5.5
 
 dependencies:
   '@remix-run/react': 1.1.3_react-dom@17.0.2+react@17.0.2
   '@remix-run/serve': 1.1.3_react-dom@17.0.2+react@17.0.2
+  '@twind/tailwind': 1.0.0-next.32_b437950899133fd6f114465784eb879b
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   remix: 1.1.3
+  twind: 1.0.0-next.32_typescript@4.5.5
 
 devDependencies:
   '@remix-run/dev': 1.1.3
@@ -186,12 +190,64 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
+  /@swc/helpers/0.3.2:
+    resolution: {integrity: sha512-qEru2uaH1vKZNCZR4rFCUZaflsBP7IWiGcIoQe22qi5tm+HEG/yPdhSba+ZCNTWk2xyYpx/nEFkncDY3orEx3w==}
+    dev: false
+
   /@szmarczak/http-timer/4.0.6:
     resolution: {integrity: sha512-4BAffykYOgO+5nzBWYwE3W90sBgLJoUPRWWcL8wlyiM8IB8ipJz3UMJ9KXQd1RKQXpKp8Tutn80HZtWsu2u76w==}
     engines: {node: '>=10'}
     dependencies:
       defer-to-connect: 2.0.1
     dev: true
+
+  /@twind/preset-autoprefix/1.0.0-next.32_b437950899133fd6f114465784eb879b:
+    resolution: {integrity: sha512-LvGrbJ5QLSFkriKsmkLpEydHvxReAtDJXp4+nZAKpmFoQYcB3zdyCztwTn7A7KUUELhWguQ+bK4ZwjDBmIFCgQ==}
+    engines: {node: '>=12.4'}
+    peerDependencies:
+      twind: 1.0.0-next.32
+      typescript: ^4.4.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@swc/helpers': 0.3.2
+      style-vendorizer: 2.1.1
+      twind: 1.0.0-next.32_typescript@4.5.5
+      typescript: 4.5.5
+    dev: false
+
+  /@twind/preset-tailwind/1.0.0-next.32_b437950899133fd6f114465784eb879b:
+    resolution: {integrity: sha512-xdeu+aTr4dSFmAt5A8FO/zJpkW+NGMuSMF9zHvtM6ABfb0GmuuowpEi14EABF5ASpF0GgqOUtfWp3N0vRGAhNw==}
+    engines: {node: '>=12.4'}
+    peerDependencies:
+      twind: 1.0.0-next.32
+      typescript: ^4.4.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@swc/helpers': 0.3.2
+      twind: 1.0.0-next.32_typescript@4.5.5
+      typescript: 4.5.5
+    dev: false
+
+  /@twind/tailwind/1.0.0-next.32_b437950899133fd6f114465784eb879b:
+    resolution: {integrity: sha512-jyrfnpSmRHiDBUsfP0RGhxXFS/sbzt26ihzWPskaEd9KqVgp4+cMLBEsO+wm2V/DlkxOyYLVnTy4rxHs2b3L+g==}
+    engines: {node: '>=12.4'}
+    peerDependencies:
+      twind: 1.0.0-next.32
+      typescript: ^4.4.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@swc/helpers': 0.3.2
+      '@twind/preset-autoprefix': 1.0.0-next.32_b437950899133fd6f114465784eb879b
+      '@twind/preset-tailwind': 1.0.0-next.32_b437950899133fd6f114465784eb879b
+      twind: 1.0.0-next.32_typescript@4.5.5
+      typescript: 4.5.5
+    dev: false
 
   /@types/acorn/4.0.6:
     resolution: {integrity: sha512-veQTnWP+1D/xbxVrPC3zHnCZRjSrKfhbMUlEA43iMZLu7EsnTtkJklIuwrCPbOi8YkvDQAiW05VQQFvvz9oieQ==}
@@ -702,7 +758,6 @@ packages:
 
   /csstype/3.0.10:
     resolution: {integrity: sha512-2u44ZG2OcNUO9HDp/Jl8C07x6pU/eTR3ncV91SiK3dhG9TWvRVsCoJw14Ckx5DgWkzGA3waZWO3d7pgqpUI/XA==}
-    dev: true
 
   /deasync/0.1.24:
     resolution: {integrity: sha512-i98vg42xNfRZCymummMAN0rIcQ1gZFinSe3btvPIvy6JFTaeHcumeKybRo2HTv86nasfmT0nEgAn2ggLZhOCVA==}
@@ -2828,6 +2883,10 @@ packages:
       inline-style-parser: 0.1.1
     dev: true
 
+  /style-vendorizer/2.1.1:
+    resolution: {integrity: sha512-gVO6Cwxtg8iX0X1W4xMhSc5WbQpiIBQDkhq3JkwebMRRgyhCfuvMrnPlTAGTRjfQPGRmzgjCOZ4drehTnLahHA==}
+    dev: false
+
   /supports-color/5.5.0:
     resolution: {integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==}
     engines: {node: '>=4'}
@@ -2880,6 +2939,20 @@ packages:
   /trough/2.0.2:
     resolution: {integrity: sha512-FnHq5sTMxC0sk957wHDzRnemFnNBvt/gSY99HzK8F7UP5WAbvP70yX5bd7CjEQkN+TjdxwI7g7lJ6podqrG2/w==}
     dev: true
+
+  /twind/1.0.0-next.32_typescript@4.5.5:
+    resolution: {integrity: sha512-Pl1wEMYqxNyy5hZlIaFlqwsQ4ARruk78vTR3frwiFkpOYhSLH+TzepgzP2Jq4+k8q4fiJsgoTxJcn52trVk4YA==}
+    engines: {node: '>=12.4'}
+    peerDependencies:
+      typescript: ^4.4.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@swc/helpers': 0.3.2
+      csstype: 3.0.10
+      typescript: 4.5.5
+    dev: false
 
   /type-fest/0.13.1:
     resolution: {integrity: sha512-34R7HTnG0XIJcBSn5XhDd7nNFPRcXYRZrBB2O2jdKqYODldSzBAqzsWoZYYvduky73toYS/ESqxPvkDf/F0XMg==}

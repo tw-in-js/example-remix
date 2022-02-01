@@ -1,4 +1,6 @@
-import { hydrate } from "react-dom";
-import { RemixBrowser } from "remix";
+import { hydrate } from "react-dom"
+import { RemixBrowser } from "remix"
+import { setupTwind } from "./twind"
 
-hydrate(<RemixBrowser />, document);
+setupTwind()
+hydrate(<RemixBrowser />, document)
